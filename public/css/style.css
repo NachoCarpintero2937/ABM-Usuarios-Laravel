@@ -1,0 +1,47 @@
+.card{
+    box-shadow: 1px 2px 10px -1px rgba(0,0,0,0.75);
+    border:none!important;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#649bd1de;
+    color: white;
+}
+.title_span{
+     padding:10px;
+     font-size: 20px;
+ }
+
+ .navbar_{
+     background: #649bd1;
+     box-shadow: -2px 0px 25px -8px rgba(0,0,0,0.75)
+ }
+ .navbar-brand{
+     color:white;
+ }
+ .nav-link{
+     color:white;
+ }
+ .btn-custom{
+     border-radius: 20px;
+     width: 50px;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .view{
+    background: #a27486fa;
+    color: white;
+ }
+ .view:hover{
+     color:white;
+     background: #aa6d85fa;
+ }
+ .create_user{
+     justify-content: flex-end;
+ }
