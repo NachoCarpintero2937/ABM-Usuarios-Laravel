@@ -59,34 +59,18 @@ $("#create_user").submit(function (event) {
     });
 });
 
-$("#editar_user").submit(function (event) {
-    var name = $("#name").val();
+$("#update-user").submit(function () {
+    var name = $("#name").val()
     var email = $("#email").val();
-    var id = $("#id").val();
-    var token = $("#name").data('token');
-    if (!name || !email) {
-        alert("Faltan completar campos necesarios");
+
+    if (!name) {
+        $("#name").css('border', '1px solid red');
+        alert("Complete el campo nombre");
         return false;
     }
-    $.ajax({
-        url: "edit-user",
-        data: {
-            _token: token,
-            name: name,
-            email: email,
-            id: id
-        },
-        type: "POST",
-        dataType: "json",
-        timeout: 10000,
-        success: function (resp) {
-            if (resp.status != 0) {
-                alert(resp.message)
-                window.location.reload();
-            } else {
-                alert(resp.message)
-            }
-        },
-        error: function () { }
-    });
-});
+    if (!email) {
+        $("#email").css('border', '1px solid red');
+        alert("Complete el campo email");
+        return false;
+    }
+}); 

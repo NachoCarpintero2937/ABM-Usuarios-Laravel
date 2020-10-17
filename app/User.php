@@ -43,7 +43,7 @@ class User extends Authenticatable
     public static function edit($params)
     {
         $response = [];
-        $user =  User::find($params);
+        $user =  User::find($params->id);
         if (!$params->id || !$params->name || !$params->email) {
             $response["data"] = null;
             $response['status'] = 0;
@@ -61,11 +61,12 @@ class User extends Authenticatable
         try {
             $user->name = $params->name;
             $user->email = $params->email;
-            if (!$user->update()) {
+            $user->password = Hash::make($params->password);
+            if (!$user->save()) {
                 throw new Exception("Error al updatear");
             } else {
                 $response = [
-                    "data" => [],
+                    "data" => $user,
                     "status" => 1,
                     "message" => "Usuario actualizado correctamente"
                 ];

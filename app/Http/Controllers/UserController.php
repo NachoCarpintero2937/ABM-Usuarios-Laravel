@@ -20,12 +20,18 @@ class UserController extends Controller
         return view('./usuarios/ver-usuarios', [
             "user" => $user,
             "edit" => $edit,
+            "response" => []
         ]);
     }
     public function edit_user(Request $request)
     {
+
         $user = User::edit($request);
-        return $user;
+        return view('./usuarios/ver-usuarios', [
+            "user" => $user['data'],
+            "edit" => true,
+            "response" => $user
+        ]);
     }
     public function action_user(Request $request)
     {

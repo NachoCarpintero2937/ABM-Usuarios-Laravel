@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// ****************USUARIOS************************
+// ****************USUARIOS************************//
 Route::get('/', 'UserController@index')->name('usuarios');
 Route::get('/ver-usuario/{id}/edit/{edit}', 'UserController@view_user')->name('ver-usuario');
 Route::post('/edit-user', 'UserController@edit_user')->name('edit-user');
